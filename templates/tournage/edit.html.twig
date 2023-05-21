@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Tournage{% endblock %}
+
+{% block body %}
+<body>
+
+    {{ include('tournage/_form.html.twig', {'button_label': 'Update'}) }}
+
+   {# <a href="{{ path('app_tournage_index') }}">back to list</a>#}
+
+   {# {{ include('tournage/_delete_form.html.twig') }}#}
+</body>
+{% endblock %}

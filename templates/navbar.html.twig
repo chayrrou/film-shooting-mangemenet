@@ -1,0 +1,130 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Attendance Dashboard | By Code Info</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+
+*{
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body{
+  background: rgb(226, 226, 226);
+}
+nav{
+  position: sticky;
+  top: 0;
+  bottom: 0;
+  height: 100vh;
+  left: 0;
+  width: 90px;
+  /* width: 280px; */
+  background: #fff;
+  overflow: hidden;
+  transition: 1s;
+  {#background-color:#EEE8AA;#}
+  
+}
+{#nav:hover{
+  width: 200px;
+  transition: 1s;
+}#}
+
+a{
+  position: relative;
+  width: 280px;
+  font-size: 14px;
+  color: rgb(85, 83, 83);
+  display: table;
+  padding: 10px;
+}
+nav .fas{
+  position: relative;
+  width: 70px;
+  height: 40px;
+  top: 20px;
+  font-size: 20px;
+  text-align: center;
+}
+.nav-item{
+  position: relative;
+  top: 12px;
+  margin-left: 10px;
+}
+
+a:hover i{
+  color: #34AF6D;
+}
+
+.logout{
+  position: absolute;
+  bottom: 0;
+}
+
+.container{
+  display: flex;
+}
+
+</style>
+
+  <!-- Font Awesome Cdn Link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+</head>
+<body>
+  <div class="container">
+    <nav>
+      <ul>
+        <li>
+          <a href={{path("app_home")}} class="logo">  
+            <img src={{asset('media/tournage1.png')}}  style="width:60px;height:60px ; margin-left:5px;background-color:#EEE8AA "/>
+          </a>
+        </li>
+        <li>
+            <a href={{path('app_film_index')}}>
+                <i class='fas fa-ghost' style='font-size:36px'></i>
+                <span class="nav-item">Film</span>
+            </a>
+        </li>
+          <li>
+            <a href={{path("app_societe_de_production_index")}}>
+              <i class='fas fa-building' style='font-size:36px'></i>
+              <span class="nav-item">Societe</span>
+            </a>
+         </li>
+         <li>
+          <a href={{path("app_realisateur_index")}}>
+            <i class='fas fa-user-alt' style='font-size:36px'></i>
+            <span class="nav-item">Realisateur</span>
+          </a>
+        </li>
+        <li>
+          <a href={{path("app_lieu_index")}}>
+            <i class='fas fa-search-location' style='font-size:36px'></i>
+            <span class="nav-item">Lieu</span>
+          </a>
+        </li>
+        <li><a href={{path("app_tournage_index")}}> 
+          <i class='fas fa-house-user' style='font-size:36px'></i>
+          <span class="nav-item">Tournage</span>
+        </a></li>
+      
+        
+        
+        
+
+        <li><a href={{path('app_home')}} class="logout">
+          <i class="fas fa-sign-out-alt"></i>
+          <span class="nav-item">Logout</span>
+        </a></li>
+      </ul>
+    </nav>
+</html>

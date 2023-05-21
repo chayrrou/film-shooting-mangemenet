@@ -1,0 +1,126 @@
+<style>
+        /* Styles pour le conteneur du formulaire */
+form {
+    width:29%;
+  padding: 20px;
+  background-color:   #FFFFFF;
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  height:100%;
+  margin-top:2%;
+  margin-left:32%;
+box-shadow: -5px 5px 10px rgba(0,0,0,0.7),
+              5px 5px 10px rgba(0,0,0,0.7);
+}
+
+/* Styles pour les champs de saisie de texte */
+form input[type="text"],
+form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Styles pour les menus déroulants */
+form select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Styles pour le bouton */
+form button {
+   font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #4CAF50;
+  width: 100%;
+  border: 0;
+  border-radius:15px;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+form button:hover{
+    background-color:#008000;
+}
+
+form a{
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #4CAF50;
+  width: 100%;
+  border: 0;
+  border-radius: 15px;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+  text-align:center;
+  font-size: 16px;
+}
+
+form .btn:hover{
+    background-color:#008000;
+}
+
+
+/* Styles supplémentaires pour le bouton lorsqu'il est survolé */
+form button:hover ,form button:active,form button:focus {
+  background: #43A047;
+
+}
+
+form .div{
+   display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+form .btn{
+  margin-left:10px;
+}
+form img{
+  border-radius:30px;
+}
+h3{
+    font-family: 'Nunito';
+    font-size: 20px;
+    margin-left:10px;
+    padding-left:10px;
+    border: 5px solid blue;
+    border-top: 0px;
+    border-bottom: 0px;
+    border-right: 0px;
+    width:100%;
+}
+strong{
+   font-family: 'Nunito';
+    font-size: 23px;
+}
+</style>
+
+<body>
+    {{ form_start(form) }}
+    <h3>Create new <strong> Societe de Production</strong></h3>
+    <img src={{asset('media/societeProd.jpg')}}  style="width:300px;height:150px ; margin-left:15px ;margin-bottom:15px;margin-top:20px"/>
+    {{ form_widget(form) }}
+    <div class="div">
+        <button class="btn">{{ button_label|default('Save') }}</button>
+        <a class="btn" href="{{ path('app_societe_de_production_index') }}">Back to list</a>
+    </div>
+    {{ form_end(form) }}
+</body>

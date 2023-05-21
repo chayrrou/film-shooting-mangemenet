@@ -1,0 +1,120 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}SocieteDeProduction{% endblock %}
+
+{% block body %}
+<style>
+    <style>
+*, *::before, *::after { box-sizing:border-box }
+
+body {
+	margin:0;
+  display:grid;  
+  min-height:100vh;
+  font-family: Roboto, sans-serif;
+  background:#243746;
+}
+
+.card {
+  padding:34px 54px;
+  margin:80px;
+  background:#fafafa;
+  max-width:450px;
+  border-radius:15px;
+  margin-left:29%;
+  height:28%;
+ box-shadow: -5px 5px 10px rgba(0,0,0,0.7),
+              5px 5px 10px rgba(0,0,0,0.7);
+}
+ p {
+    max-width:90%;
+    margin-bottom:20px;
+  }
+h2{
+    font-family: 'Nunito';
+    font-size: 25px;
+    margin-left:35px;
+    padding-left:10px;
+    border: 5px solid blue;
+    border-top: 0px;
+    border-bottom: 0px;
+    border-right: 0px;
+    width:100%;
+}
+
+.societe {
+border:5px solid blue;
+padding:10px;
+  font-size: 15px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.div{
+   display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: tomato;
+  color: white;
+  text-decoration: none;
+  border-radius: 20px;
+  transition: background-color 0.3s ease;
+  margin: 10px;
+     font-family: 'Nunito';
+    text-align:center;
+    font-size:20px;
+box-shadow: -5px 5px 10px rgba(255, 255, 255, 0.7),
+            5px 5px 10px rgba(255, 255, 255, 0.7);
+
+}
+
+
+.button:hover {
+  background-color: orangered;
+}
+</style>
+   {# <h1>SocieteDeProduction</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ societe_de_production.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ societe_de_production.nom }}</td>
+            </tr>
+            <tr>
+                <th>Adresse</th>
+                <td>{{ societe_de_production.adresse }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+   <Button > 
+   <a href="{{ path('app_societe_de_production_index') }}">back to list</a>
+</Button>
+    <a href="{{ path('app_societe_de_production_edit', {'id': societe_de_production.id}) }}">edit</a>
+
+    {{ include('societe_de_production/_delete_form.html.twig') }}#}
+
+    <div class="card">
+        <h2>Societe De Production N° {{ societe_de_production.id }}</h2>
+        <div style="margin-top: 15%; text-align: center;">
+            <span class="societe">Nom : {{ societe_de_production.nom }}</span>
+            <span class="societe">{{ societe_de_production.adresse }}</span>
+        </div>
+
+         <div style="margin-top:15%" class="div">
+            <a href="{{ path('app_societe_de_production_index') }}" class="button">Back to List</a>
+            <a href="{{ path('app_societe_de_production_edit', {'id': societe_de_production.id}) }}" class="button">Edit</a>
+         </div>
+</div>
+{% endblock %}

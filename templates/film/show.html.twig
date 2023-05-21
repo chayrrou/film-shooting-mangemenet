@@ -1,0 +1,175 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Film{% endblock %}
+
+{% block body %}
+
+<style>
+  .card{
+  width: 650px;
+  height: 350px;
+  display: flex;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #e9e7e7;
+box-shadow: -5px 5px 10px rgba(255, 255, 255, 0.7),
+            5px 5px 10px rgba(255, 255, 255, 0.7);
+
+}
+
+.card-thumbnail{
+  position: relative;
+  width: 250px;
+  overflow: hidden;
+}
+
+.card-thumbnail img{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-body{
+  width: 400px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  font-size: 12px;
+  color: black;
+}
+
+.card-title{
+  color: black;
+  font-size: 22px;
+  letter-spacing: 5px;
+}
+
+p{
+  margin-top: -20px;
+}
+
+
+.stars{
+  margin-top: -10px;
+  color:orange;
+  font-size:15px;
+} 
+
+p span{
+  margin-right: 10px;
+  font-size:14px;
+}
+
+.stars i{
+  margin-right: 10px;
+}
+
+.card-description{
+  text-align: justify;
+  font-size:20px;
+}
+
+.div{
+   display: flex;
+  justify-content: center;
+  align-items: center;
+  width:100%;
+}
+
+.trailer{
+  background: transparent;
+  color: #f1c40f;
+  border: 2px solid #f1c40f;
+  padding: 7px 10px;
+  border-radius: 5px;
+  transition: 0.2s ease;
+  text-align:center;
+  font-size:20px;
+}
+
+.trailer:hover{
+  background: #f1c40f;
+  color: #000;
+}
+
+</style>
+
+
+  {#  <h1>Film</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ film.id }}</td>
+            </tr>
+            <tr>
+                <th>Titre</th>
+                <td>{{ film.titre }}</td>
+            </tr>
+            <tr>
+                <th>Photo</th>
+                <td>
+                     <img src={{asset('uploads/' ~ film.photo )}} width="100%" />
+                </td>
+            </tr>
+            <tr>
+                <th>Genre</th>
+                <td>{{ film.genre }}</td>
+            </tr>
+            <tr>
+                <th>Langue</th>
+                <td>{{ film.langue }}</td>
+            </tr>
+            <tr>
+                <th>TypeDeTournage</th>
+                <td>{{ film.typeDeTournage }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+  <a href="{{ path('app_film_index') }}">Back </a>
+
+    <a href="{{ path('app_film_edit', {'id': film.id}) }}">Edit</a>
+
+    {{ include('film/_delete_form.html.twig') }}#}
+<body>
+<div style="margin-top:10%; margin-left:23%">
+        <div class="card">
+            <div class="card-thumbnail">
+            <img src={{asset('uploads/' ~ film.photo )}} alt="">
+            </div>
+            <div class="card-body">
+            <span class="card-title">Film N° {{ film.id }}-{{ film.titre }}</span>
+            <p>
+                <span>2023</span> 
+                <span>2 Hours 45 Min</span> 
+                <span>{{ film.langue }}</span>
+                <span>{{ film.genre }}</span>
+            </p>
+            <span class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </span>
+            <p class="card-description">Welcome to this Movies, Enjoy it !</p>
+            <div class="div">
+                <a href="{{ path('app_film_index') }}" style="width:100%; margin-right:10%"  class="trailer">Back</a>
+                <a href="{{ path('app_film_edit', {'id': film.id}) }}" style="width:50%; margin-right:10%"  class="trailer">Edit</a>
+             <a class="trailer" style="width:100%;" href="https://www.youtube.com/watch?v=XfkjE-NbYyA"><i class="fas fa-play"></i>   Watch Trailer</a>
+            </div>
+            </div>
+        </div>
+</div>
+</body>
+{% endblock %}

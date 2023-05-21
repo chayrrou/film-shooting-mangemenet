@@ -1,0 +1,117 @@
+<style>
+form {
+    width:100%;
+  padding: 20px;
+  background-color:   #FFFFFF;
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  height:80%;
+  margin-top:2%;
+  margin-left:32%;
+  box-shadow: -5px 5px 10px rgba(0,0,0,0.7),
+              5px 5px 10px rgba(0,0,0,0.7);
+
+}
+
+/* Styles pour les champs de saisie de texte */
+form input[type="text"],
+form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+
+/* Styles pour le bouton */
+form button {
+   font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #4CAF50;
+  width: 100%;
+  border: 0;
+  border-radius:15px;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+form button:hover{
+    background-color:#008000;
+}
+
+form a{
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #4CAF50;
+  width: 100%;
+  border: 0;
+  border-radius: 15px;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+  text-align:center;
+  font-size: 16px;
+}
+
+form .btn:hover{
+    background-color:#008000;
+}
+
+
+/* Styles supplémentaires pour le bouton lorsqu'il est survolé */
+form button:hover ,form button:active,form button:focus {
+  background: #43A047;
+
+}
+
+form .div{
+   display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+form .btn{
+  margin-left:10px;
+}
+form img{
+  border-radius:30px;
+}
+h3{
+    font-family: 'Nunito';
+    font-size: 20px;
+    margin-left:70px;
+    padding-left:10px;
+    border: 5px solid blue;
+    border-top: 0px;
+    border-bottom: 0px;
+    border-right: 0px;
+    width:100%;
+}
+strong{
+   font-family: 'Nunito';
+    font-size: 23px;
+}
+</style>
+<div style="margin-left:20%;margin-top:8%">
+    {{ form_start(form) }}
+        <h3>Create new <strong> Lieu</strong></h3>
+        <img src="{{ asset('media/lieu.jpg') }}" alt="image" style="width:300px;height:150px ; margin-left:15px ;margin-bottom:15px;margin-top:20px">
+    {{form_widget(form)}}         
+    <div class="div">
+        <button >{{ button_label|default('Save') }}</button>
+        <a href="{{ path('app_lieu_index') }}" class="btn">back to list</a>
+    </div>
+    {{ form_end(form) }}
+</div>
