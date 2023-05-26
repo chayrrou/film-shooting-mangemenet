@@ -144,7 +144,7 @@ class Film
     }
 
     public function __toString(){
-        return $this->id; // Remplacer champ par une propriété "string" de l'entité
+        return $this->titre; // Remplacer champ par une propriété "string" de l'entité
     }
 
 
